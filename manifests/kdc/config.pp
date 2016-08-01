@@ -25,8 +25,8 @@
 #   from the system.
 #   @note For safety, the Principal database will *not* be rebuilt unless it is
 #     physically absent from the system.
-# @param kdc_ports [Array(Ports)] The UDP ports on which the KDC should listen.
-# @param kdc_tcp_ports [Array(Ports)] The TCP ports on which the KDC should listen.
+# @param kdc_ports [Array<Port>] The UDP ports on which the KDC should listen.
+# @param kdc_tcp_ports [Array<Port>] The TCP ports on which the KDC should listen.
 #
 # @author Trevor Vaughan <tvaughan@onyxpoint.com>
 #

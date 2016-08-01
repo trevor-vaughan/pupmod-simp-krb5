@@ -31,6 +31,7 @@ group :test do
 end
 
 group :development do
+  gem 'puppet-strings'
   gem "travis"
   gem "travis-lint"
   gem "travish"

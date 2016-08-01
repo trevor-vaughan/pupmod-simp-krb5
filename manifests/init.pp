@@ -10,7 +10,7 @@
 #   components.
 #   @note This presently does not set up the LDAP back-end for KRB5
 # @param use_iptables [Boolean] If set, use the SIMP iptables module.
-# @param enctypes [Array(String)] An Array of default permitted encryption
+# @param enctypes [Array<String>] An Array of default permitted encryption
 #   types.
 #
 # @author Trevor Vaughan <tvaughan@onyxpoint.com>

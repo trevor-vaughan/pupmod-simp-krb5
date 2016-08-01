@@ -5,7 +5,8 @@
 #
 # man 5 krb5.conf
 #
-# @param name [String] A unique domain definition.
+# @option name [String] A unique domain definition.
+#
 # @param ensure [String] Whether to set or clear the key. Valid values are
 #   'present' and 'absent'.  Setting anything besides 'absent' will default to
 #   'present'.

@@ -3,12 +3,12 @@
 # @private
 #
 #
-# @param kdc_ports [Array(Ports)] The UDP ports on which the KDC should listen.
-# @param kdc_tcp_ports [Array(Ports)] The TCP ports on which the KDC should listen.
-# @param client_nets [Array(NetworkAddress)] An Array of hostnames or IP
+# @option kdc_ports [Array(Ports)] The UDP ports on which the KDC should listen.
+# @option kdc_tcp_ports [Array(Ports)] The TCP ports on which the KDC should listen.
+# @option client_nets [Array(NetworkAddress)] An Array of hostnames or IP
 #   addresses that are allowed into this system. Only used by the IPTables
 #   settings.
-# @param use_iptables [Boolean] If set, use the SIMP iptables module.
+# @option use_iptables [Boolean] If set, use the SIMP iptables module.
 #
 # @author Trevor Vaughan <tvaughan@onyxpoint.com>
 #

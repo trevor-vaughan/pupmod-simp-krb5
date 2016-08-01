@@ -5,11 +5,12 @@
 #
 # @see man 5 kdc.conf -> REALMS SECTION
 #
+# @option name [String] The affected Realm. This will be upcased if not done already.
+#
 # @param initialize [Boolean] If set, auto-initialize the Realm. This will
 #   add an initial Principal for this Realm.
 # @param auto_principal [String] If $initialize is set, this principal will be
 #   created as an administrative Principal on the Realm.
-# @param name [String] The affected Realm. This will be upcased if not done already.
 # @param client_nets [Array] The networks to allow access into the KDC realm.
 # @param acl_file [AbsolutePath] The path to the KDC realm ACL file.
 # @param admin_keytab [AbsolutePath] The path to the KDC realm keytab.
@@ -17,7 +18,7 @@
 # @param default_principal_expiration [AbsoluteTime] The Absolute Time for
 #   expiring the principal expiration date for this realm.
 #   @see http://web.mit.edu/kerberos/krb5-devel/doc/basic/date_format.html#abstime
-# @param default_principal_flags [Array(String)] An array following the
+# @param default_principal_flags [Array<String>] An array following the
 #   format prescribed in the man page. The absence of a '-' in front of the
 #   entry implies that a '+' will be added.
 # @param dict_file [AbsolutePath] The path to the dictionary file of strings

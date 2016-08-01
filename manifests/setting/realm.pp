@@ -3,7 +3,7 @@
 #
 # man 5 krb5.conf -> REALMS SECTION
 #
-# @param name [String] The affected Realm. This will be upcased.
+# @option name [String] The affected Realm. This will be upcased.
 #
 # @param admin_server [HostString] The host where the admin server is running.
 # @param kdc [HostString] The host where the KDC is running.
@@ -20,6 +20,7 @@
 #     DB:<filename>
 #     RULE:<exp>
 #     DEFAULT
+# @param target [AbsolutePath] The krb5 configuration directory
 #
 # @author Trevor Vaughan <tvaughan@onyxpoint.com>
 #

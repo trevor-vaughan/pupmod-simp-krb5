@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Definedtype: krb5::setting::realm
+  
+    &mdash; Documentation by YARD 0.9.5
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "krb5::setting::realm";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (r)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../krb5.html" title="krb5 (hostclass)">krb5</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../setting.html" title="krb5::setting (definedtype)">setting</a></span></span>
+     &raquo; 
+    <span class="title">realm</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="puppet_manifest_list_link"
+        href="../../puppet_manifest_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="../../class_list.html"></iframe>
+
+      <div id="content"><div class='module_header'>
+  <h1>
+    Puppet Defined Type: realm
+  </h1>
+</div>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>manifests/setting/realm.pp</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+<p>This define allows you to add a realm to the [realms] section of
+/etc/krb5.conf</p>
+
+<p>man 5 krb5.conf -&gt; REALMS SECTION</p>
+</p>
+  </div>
+</div>
+<div class="tags">
+  
+  
+  
+</div>
+<h2>Parameter Summary</h2>
+<div class="tags">
+  <ul class="param">
+    <li><span class="name">admin_server </span><span class="type">(<tt>HostString</tt>)</span> - <div class="inline"><p> The host where the admin server is running. </p></div></li><li><span class="name">kdc </span><span class="type">(<tt>HostString</tt>)</span><tt> => ''</tt> - <div class="inline"><p> The host where the KDC is running. </p></div></li><li><span class="name">default_domain </span><span class="type">(<tt>String</tt>)</span><tt> => ''</tt> - <div class="inline"><p> The default domain in which hosts are assumed
+to be present. </p></div></li><li><span class="name">v4_instance_convert </span><span class="type">(<tt>Hash</tt>)</span><tt> => ''</tt> - <div class="inline"><p> A hash of 'tag name' to 'tag value'
+mappings for default domain mapping translations. </p></div></li><li><span class="name">v4_realm </span><span class="type">(<tt>String</tt>)</span><tt> => ''</tt> - <div class="inline"><p> The v4 realm to be used when talking to legacy
+systems. </p></div></li><li><span class="name">auth_to_local_names </span><span class="type">(<tt>Hash</tt>)</span><tt> => ''</tt> - <div class="inline"><p> A hash of 'principal names' to 'local user
+names' per the man page. </p></div></li><li><span class="name">auth_to_local </span><span class="type">(<tt>String</tt>)</span><tt> => ''</tt> - <div class="inline"><p> A general rule for mapping to local user names.
+The following values are allowed:
+  DB:<filename>
+  RULE:<exp>
+  DEFAULT </p></div></li><li><span class="name">target </span><span class="type">(<tt>AbsolutePath</tt>)</span><tt> => pick(getvar('::krb5::config::config_dir'), '/etc/krb5.conf.d')</tt> - <div class="inline"><p> The krb5 configuration directory </p></div></li>
+  </ul>
+</div>
+</div>
+
+      <div id="footer">
+  Generated on Mon Aug  1 18:05:38 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.5 (ruby-2.1.10).
+</div>
+
+    </div>
+  </body>
+</html>

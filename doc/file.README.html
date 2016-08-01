@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.9.5
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "README";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="file_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="puppet_manifest_list_link"
+        href="puppet_manifest_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="file_list.html"></iframe>
+
+      <div id="content"><div id='filecontents'>
+<p><a href="http://www.apache.org/licenses/LICENSE-2.0.html"><img
+src="http://img.shields.io/:license-apache-blue.svg"></a> <a
+href="https://travis-ci.org/simp/pupmod-simp-krb5"><img
+src="https://travis-ci.org/simp/pupmod-simp-krb5.svg"></a> <a
+href="https://img.shields.io/badge/SIMP%20compatibility-4.2.*%2F5.1.*-orange.svg"><img
+src="https://img.shields.io/badge/SIMP%20compatibility-4.2.*%2F5.1.*-orange.svg"></a></p>
+
+<h1 id="label-Krb5+Puppet+Module">Krb5 Puppet Module</h1>
+
+<h2 id="label-Table+of+Contents">Table of Contents</h2>
+<ol><li>
+<p><a href="#overview">Overview</a></p>
+</li><li>
+<p><a href="#module-description">Module Description - What the module does and
+why it is useful</a></p>
+</li><li>
+<p><a href="#setup">Setup - The basics of getting started with krb5</a></p>
+<ul><li>
+<p><a href="#what-krb5-affects">What krb5 affects</a></p>
+</li><li>
+<p><a href="#setup-requirements">Setup requirements</a></p>
+</li><li>
+<p><a href="#beginning-with-krb5">Beginning with krb5</a></p>
+</li><li>
+<p><a href="#what-krb5-affects">What krb5 affects</a></p>
+</li><li>
+<p><a href="#setup-requirements">Setup requirements</a></p>
+</li><li>
+<p><a href="#beginning-with-krb5">Beginning with krb5</a></p>
+</li></ul>
+</li><li>
+<p><a href="#usage">Usage - Configuration options and additional
+functionality</a></p>
+
+<p>-</p>
+
+<pre class="code ruby"><code class="ruby">Creating Admin Principals\_
+
+:   -   ACL Configuration\_
+    -   Create Your Admin Principal\_</code></pre>
+
+<p>-</p>
+
+<pre class="code ruby"><code class="ruby">Creating Host Principals\_
+
+:   -   Create Your Keytabs\_</code></pre>
+<ul><li>
+<p>Propagate the Keytabs_</p>
+</li></ul>
+</li><li>
+<p><a href="#reference">Reference - An under-the-hood peek at what the module
+is doing and how</a></p>
+</li><li>
+<p><a href="#limitations">Limitations - OS compatibility, etc.</a></p>
+</li><li>
+<p><a href="#development">Development - Guide for contributing to the
+module</a></p>
+<ul><li>
+<p><a href="#acceptance-tests">Acceptance Tests - Beaker env variables</a></p>
+</li></ul>
+</li></ol>
+
+<h2 id="label-Overview">Overview</h2>
+
+<p>Puppet management of the MIT kerberos stack</p>
+
+<h2 id="label-This+is+a+SIMP+module">This is a SIMP module</h2>
+
+<p>This module is a component of the <a
+href="https://github.com/NationalSecurityAgency/SIMP">System Integrity
+Management Platform</a>, a compliance-management framework built on Puppet.</p>
+
+<p>If you find any issues, they can be submitted to our <a
+href="https://simp-project.atlassian.net/">JIRA</a>.</p>
+
+<p>Please read our <a
+href="https://simp-project.atlassian.net/wiki/display/SD/Contributing+to+SIMP">Contribution
+Guide</a> and visit our <a
+href="https://simp-project.atlassian.net/wiki/display/SD/SIMP+Development+Home">developer
+wiki</a>.</p>
+
+<p>This module is optimally designed for use within a larger SIMP ecosystem,
+but many of its functions can be used independently.</p>
+
+<h2 id="label-Setup">Setup</h2>
+
+<h3 id="label-What+krb5+affects">What krb5 affects</h3>
+
+<p>This module helps administrators get a working KDC in place and clients
+configured to use the KDC.</p>
+
+<p>The module, by default, sets up a fully functional KDC in your environment
+and generates keytabs for one admin user, and all of your hosts that it can
+discover via keydist.</p>
+
+<blockquote>
+<p><strong>note</strong></p>
+
+<p>The keydist discovery only works if the KDC is on the same system as your
+Puppet Server!</p>
+</blockquote>
+
+<h3 id="label-Setup+Requirements">Setup Requirements</h3>
+
+<p>The only thing necessary to begin using krb5 is to install it into your
+modulepath.</p>
+
+<h3 id="label-Beginning+with+krb5">Beginning with krb5</h3>
+
+<p>The following sections give a brief guide on how to get started, for more
+information, please see the official Red Hat documentation at <a
+href="https://access.redhat.com/knowledge/docs/en-US/Red_Hat_Enterprise_Linux/6/html/Managing_Smart_Cards/Configuring_a_Kerberos_5_Server.html">access.redhat.com/knowledge/docs/en-US/Red_Hat_Enterprise_Linux/6/html/Managing_Smart_Cards/Configuring_a_Kerberos_5_Server.html</a></p>
+
+<blockquote>
+<p><strong>note</strong></p>
+
+<p>You can skip this section if you&#39;re using the default settings. These
+will complete the following for you with randomly generated passwords for
+all keytabs and the master password.</p>
+</blockquote>
+
+<h2 id="label-Usage">Usage</h2>
+
+<h3 id="label-Creating+Admin+Principals">Creating Admin Principals</h3>
+
+<h4 id="label-ACL+Configuration">ACL Configuration</h4>
+
+<p>The following Puppet code snippet will create an ACL for your admin user
+that is <em>probably</em> appropriate for your organization.</p>
+
+<pre class="code ruby"><code class="ruby">.ruby}
+krb5_acl{ &quot;${::domain}_admin&quot;:
+ principal       =&gt; &quot;*/admin@${::domain}&quot;,
+ operation_mask  =&gt; &#39;*&#39;
+}
+</code></pre>
+
+<h4 id="label-Create+Your+Admin+Principal">Create Your Admin Principal</h4>
+
+<p>Your first principal will be an admin principal and will be allowed to
+manage the environment since it is in the admin group. This
+<strong>must</strong> be created on the KDC system.</p>
+
+<p>Run the following command, as root, to create your principal:</p>
+
+<pre class="code ruby"><code class="ruby">.bash}
+# /usr/sbin/kadmin.local -r YOUR.DOMAIN -q &quot;addprinc &lt;username&gt;/admin&quot;</code></pre>
+
+<p>You can now do everything remotely using this principal. Load it using</p>
+
+<pre class="code ruby"><code class="ruby">.bash}
+$ /usr/bin/kinit &lt;username&gt;/admin</code></pre>
+
+<h3 id="label-Creating+Host+Principals">Creating Host Principals</h3>
+
+<p>Before you can really do anything with your hosts, you need to ensure that
+the host itself has a keytab.</p>
+
+<p>SIMP uses the /etc/puppet/keydist directory for each host to securely
+distribute keytabs to the clients.</p>
+
+<p>On the KDC, generate a principal for each host in your environment using
+the following command:</p>
+
+<pre class="code ruby"><code class="ruby">.bash}
+# /usr/sbin/kadmin.local -r YOUR.DOMAIN -q &#39;addprinc -randkey host/&lt;fqdn&gt;&#39;</code></pre>
+
+<h4 id="label-Create+Your+Keytabs">Create Your Keytabs</h4>
+
+<p>Then, create a separate keytab file for each of your created hosts using
+the following command:</p>
+
+<pre class="code ruby"><code class="ruby">.bash}
+# /usr/sbin/kadmin.local -r YOUR.DOMAIN -q &#39;ktadd -k &lt;fqdn&gt;.keytab host/&lt;fqdn&gt;&#39;</code></pre>
+
+<h3 id="label-Propagate+the+Keytabs">Propagate the Keytabs</h3>
+
+<p>Move all of the resulting keytab files SECURELY to
+&lt;environment_dir&gt;/keydist/&lt;fqdn&gt;/keytabs on the Puppet server
+as appropriate for each file.</p>
+
+<blockquote>
+<p><strong>note</strong></p>
+
+<p>Make sure that all of your keytab directories are readable by the group
+<strong>puppet</strong> and not the entire world!</p>
+</blockquote>
+
+<p>Then, update your node declarations to include &#39;::krb5::keytab&#39;.</p>
+
+<p>Once the Puppet Agent runs on the clients, your keytabs will copied to
+/etc/krb5_keytabs. The keytab matching your fqdn will be set in place as
+the default system keytab.</p>
+
+<h2 id="label-Limitations">Limitations</h2>
+
+<p>SIMP Puppet modules are generally intended to be used on a Redhat
+Enterprise Linux-compatible distribution such as EL6 and EL7.</p>
+
+<h2 id="label-Development">Development</h2>
+
+<p>Please see the <a
+href="https://simp-project.atlassian.net/wiki/display/SD/Contributing+to+SIMP">SIMP
+Contribution Guidelines</a>.</p>
+
+<h3 id="label-Acceptance+tests">Acceptance tests</h3>
+
+<p>To run the system tests, you need <a
+href="https://www.vagrantup.com/">Vagrant</a> installed. Then, run:</p>
+
+<pre class="code ruby"><code class="ruby">.shell}
+bundle exec rake acceptance</code></pre>
+
+<p>Some environment variables may be useful:</p>
+
+<pre class="code ruby"><code class="ruby">.shell}
+BEAKER_debug=true
+BEAKER_provision=no
+BEAKER_destroy=no
+BEAKER_use_fixtures_dir_for_modules=yes</code></pre>
+<ul><li>
+<p><code>BEAKER_debug</code>: show the commands being run on the STU and their
+output.</p>
+</li><li>
+<p><code>BEAKER_destroy=no</code>: prevent the machine destruction after the
+tests finish so you can inspect the state.</p>
+</li><li>
+<p><code>BEAKER_provision=no</code>: prevent the machine from being recreated.
+This can save a lot of time while you&#39;re writing the tests.</p>
+</li><li>
+<p><code>BEAKER_use_fixtures_dir_for_modules=yes</code>: cause all module
+dependencies to be loaded from the <code>spec/fixtures/modules</code>
+directory, based on the contents of <code>.fixtures.yml</code>. The
+contents of this directory are usually populated by <code>bundle exec rake
+spec_prep</code>. This can be used to run acceptance tests to run on
+isolated networks.</p>
+</li></ul>
+</div></div>
+
+      <div id="footer">
+  Generated on Mon Aug  1 18:05:37 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.5 (ruby-2.1.10).
+</div>
+
+    </div>
+  </body>
+</html>

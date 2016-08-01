@@ -11,12 +11,13 @@
 #
 # man 5 krb5.conf
 #
-# @param name [String] A string of the format `section:key`. For instance, if
+# @option name [String] A string of the format `section:key`. For instance, if
 #   you wanted to add to the `libdefaults` section with key
 #   `clockskew`, you would call this as follows:
 #
 #     @example Update the [libdefaults] `clockskew` key
 #       krb5::setting { 'libdefaults:clockskew': value => '1000' }
+#
 # @param value [String] The string that should be used to set the desinated
 #   value. This string will *not* be processed so make sure that it's what you
 #   want to output to the system.

@@ -17,7 +17,7 @@
 #     Class['my_krb5kdc'] ~> Class['krb5::kdc::service']
 #   }
 #
-# @param client_nets [Array(NetworkAddress)] An Array of hostnames or IP
+# @param client_nets [Array<NetworkAddress>] An Array of hostnames or IP
 #   addresses that are allowed into this system. Only used by the IPTables
 #   settings.
 # @param use_ldap [Boolean] If set, configure the system to incorporate LDAP
@@ -65,7 +65,6 @@
 #       allow $2
 #
 # @author Trevor Vaughan <tvaughan@onyxpoint.com>
-#
 class krb5::kdc (
   $client_nets = hiera('client_nets', ['127.0.0.1']),
   $config_dir = '/var/kerberos/krb5kdc/kdc.conf.simp.d',

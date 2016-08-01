@@ -11,7 +11,7 @@
 # @param renew_lifetime [String] The default renewable lifetime for initial
 #   tickets. Should be a valid krb5 Time Duration string.
 #   @see http://web.mit.edu/kerberos/krb5-1.13/doc/basic/date_format.html#duration
-# @parm forwardable [Boolean] Whether or not to make initial tickets
+# @param forwardable [Boolean] Whether or not to make initial tickets
 #   forwardable by default. This is needed for SSH GSSAPI.
 # @param clockskew [String] Max allowable amount of clockskew allowed before
 #   assuming that a message is invalid. Should be a valid krb5 Time Duration

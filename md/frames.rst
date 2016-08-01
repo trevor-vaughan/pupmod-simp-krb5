@@ -1,0 +1,5 @@
+Oops!
+=====
+
+YARD requires JavaScript!
+-------------------------
